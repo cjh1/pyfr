@@ -1,0 +1,6 @@
+- name: Set up pyfr
+  hosts: pyfr
+  become: yes
+  roles:
+    - pyfr
+
