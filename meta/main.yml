@@ -1,0 +1,14 @@
+galaxy_info:
+  author: "Chris Harris"
+  description: Role to install PyFR and its dependencies
+  company: Kitware
+  license: Apache
+
+  min_ansible_version: 1.9
+
+  platforms:
+  - name: Ubuntu
+    versions:
+      - trusty
+
+  dependencies: []
