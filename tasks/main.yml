@@ -30,7 +30,7 @@
 - name: Install pycuda
   pip: executable=pip3  name=pycuda state=present
   become_user: root
-  ignore_errors: True
+  when: install_pycuda
   tags: pyfr
 
 - name: Install PyFR from GitHub
