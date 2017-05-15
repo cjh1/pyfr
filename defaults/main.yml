@@ -1,1 +1,2 @@
 install_pycuda: yes
+pyfr_version: v1.3.0
