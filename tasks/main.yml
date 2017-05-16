@@ -1,3 +1,11 @@
+- name: Add PPA for gcc 4.9
+  become: yes
+  become_user: root
+  apt_repository:
+    repo: 'ppa:ubuntu-toolchain-r/test'
+  tags:
+    - pyfr
+
 - name: Install pip3
   apt: name={{ item }} state=present update_cache=yes
   become: yes
@@ -18,6 +26,17 @@
     - libmetis-dev
     - libopenblas-dev
     - git
+    - g++-4.9
+  tags:
+    - pyfr
+
+- name: Update alternatives to use gcc 4.9
+  become: yes
+  become_user: root
+  alternatives:
+    name: gcc
+    path: /usr/bin/gcc-4.9
+    link: /usr/bin/gcc
   tags:
     - pyfr
 
