@@ -56,6 +56,15 @@
   when: install_pycuda
   tags: pyfr
 
+- name: Ensure Cython is up to date
+  pip:
+    executable: pip3
+    name: Cython
+    extra_args: --upgrade
+  become: yes
+  become_user: root
+  tags: pyfr
+
 - name: Install PyFR from GitHub
   pip: executable=pip3 name="git+https://github.com/vincentlab/PyFR.git@{{ pyfr_version }}#egg=pyfr" state=present editable=False
   become: yes
